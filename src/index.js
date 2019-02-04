@@ -11,7 +11,7 @@ client.on('connect', () => {
     si.cpuCurrentspeed().then(data => {
       client.publish('systemInfo.cpuCurrentspeed', JSON.stringify(data))
     })
-    exec('vcgencmd measure_clock arm', {cwd: './'}, (err, stdout, stderr) => {
+    exec('vcgencmd measure_clock arm', (err, stdout, stderr) => {
       client.publish('vcgencmd.measure_clock', stdout)
     })    
     exec('vcgencmd measure_temp', {cwd: './'}, (err, stdout, stderr) => {
