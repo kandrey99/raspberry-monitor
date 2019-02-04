@@ -11,6 +11,9 @@ client.on('connect', () => {
     si.cpuCurrentspeed().then(data => {
       client.publish('systemInfo.cpuCurrentspeed', JSON.stringify(data))
     })
+    si.mem().then(data => {
+      client.publish('systemInfo.memUsed', JSON.stringify(data))
+    })
     exec('vcgencmd measure_clock arm', (err, stdout, stderr) => {
       client.publish('vcgencmd.measure_clock', stdout)
     })    
