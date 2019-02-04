@@ -9,6 +9,7 @@
   "author": "kandrey@oviont.com",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "^2.18.8"
+    "mqtt": "^2.18.8",
+    "systeminformation": "^4.0.6"
   }
 }
